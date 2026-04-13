@@ -1,0 +1,10 @@
+name: math-solver-ai-mcp
+description: "MEOK AI Labs — Math Solver tools for AI agents and LLMs"
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/math-solver-ai-mcp
+license: MIT
+categories: [Education, Mathematics]
+tags: [math, mathematics, equation-solver, calculus, algebra, symbolic-math]
+runtime: python
+entrypoint: server.py
