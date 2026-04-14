@@ -1,10 +1,52 @@
 name: math-solver-ai-mcp
-description: "MEOK AI Labs — Math Solver tools for AI agents and LLMs"
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/math-solver-ai-mcp
-license: MIT
-categories: [Education, Mathematics]
-tags: [math, mathematics, equation-solver, calculus, algebra, symbolic-math]
-runtime: python
-entrypoint: server.py
+description: MCP server for math and statistics tools.
+version: 1.0.0
+tools:
+- name: solve_equation
+  description: 'Solve linear/quadratic equations. Format: ''2x + 3 = 7'' or ''x^2
+    - 5x + 6 = 0''.'
+  parameters:
+  - name: equation
+    type: string
+    required: true
+  - name: variable
+    type: string
+    required: false
+- name: statistics_summary
+  description: 'Calculate comprehensive statistics. numbers: comma-separated values.'
+  parameters:
+  - name: numbers
+    type: string
+    required: true
+- name: matrix_operations
+  description: 'Matrix operations. Matrices as JSON 2D arrays. Operations: multiply,
+    add, subtract, transpose, determinant.'
+  parameters:
+  - name: matrix_a
+    type: string
+    required: true
+  - name: matrix_b
+    type: string
+    required: false
+  - name: operation
+    type: string
+    required: false
+- name: probability_calculator
+  description: 'Calculate probabilities. Types: binomial, combination, permutation,
+    expected_value, bayes.'
+  parameters:
+  - name: event_type
+    type: string
+    required: true
+  - name: n
+    type: integer
+    required: false
+  - name: k
+    type: integer
+    required: false
+  - name: p
+    type: number
+    required: false
+  - name: trials
+    type: integer
+    required: false

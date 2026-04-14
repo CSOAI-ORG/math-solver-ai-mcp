@@ -1,4 +1,9 @@
 """Math Solver AI MCP Server — Math and statistics tools."""
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import math
 import re
 import time
@@ -19,8 +24,12 @@ def _rate_check(tool: str) -> bool:
     return True
 
 @mcp.tool()
-def solve_equation(equation: str, variable: str = "x") -> dict[str, Any]:
+def solve_equation(equation: str, variable: str = "x", api_key: str = "") -> dict[str, Any]:
     """Solve linear/quadratic equations. Format: '2x + 3 = 7' or 'x^2 - 5x + 6 = 0'."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _rate_check("solve_equation"):
         return {"error": "Rate limit exceeded (50/day)"}
     eq = equation.replace(" ", "")
@@ -83,8 +92,12 @@ def solve_equation(equation: str, variable: str = "x") -> dict[str, Any]:
         return {"equation": equation, "type": "constant", "result": "No solution" if c != 0 else "Identity (all values)"}
 
 @mcp.tool()
-def statistics_summary(numbers: str) -> dict[str, Any]:
+def statistics_summary(numbers: str, api_key: str = "") -> dict[str, Any]:
     """Calculate comprehensive statistics. numbers: comma-separated values."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _rate_check("statistics_summary"):
         return {"error": "Rate limit exceeded (50/day)"}
     try:
@@ -121,8 +134,12 @@ def statistics_summary(numbers: str) -> dict[str, Any]:
     }
 
 @mcp.tool()
-def matrix_operations(matrix_a: str, matrix_b: str = "", operation: str = "multiply") -> dict[str, Any]:
+def matrix_operations(matrix_a: str, matrix_b: str = "", operation: str = "multiply", api_key: str = "") -> dict[str, Any]:
     """Matrix operations. Matrices as JSON 2D arrays. Operations: multiply, add, subtract, transpose, determinant."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _rate_check("matrix_operations"):
         return {"error": "Rate limit exceeded (50/day)"}
     import json
@@ -169,8 +186,12 @@ def matrix_operations(matrix_a: str, matrix_b: str = "", operation: str = "multi
     return {"error": f"Unknown operation: {operation}"}
 
 @mcp.tool()
-def probability_calculator(event_type: str, n: int = 0, k: int = 0, p: float = 0.0, trials: int = 0) -> dict[str, Any]:
+def probability_calculator(event_type: str, n: int = 0, k: int = 0, p: float = 0.0, trials: int = 0, api_key: str = "") -> dict[str, Any]:
     """Calculate probabilities. Types: binomial, combination, permutation, expected_value, bayes."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _rate_check("probability_calculator"):
         return {"error": "Rate limit exceeded (50/day)"}
     if event_type == "combination":

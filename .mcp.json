@@ -1,23 +1,88 @@
 {
   "name": "math-solver-ai-mcp",
-  "description": "MEOK AI Labs \u2014 Math Solver tools for AI agents and LLMs",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/math-solver-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "MCP server for math and statistics tools.",
+  "version": "1.0.0",
   "tools": [
-    "solve_equation",
-    "statistics_summary",
-    "matrix_operations",
-    "probability_calculator"
-  ],
-  "categories": [
-    "Education",
-    "Mathematics"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "solve_equation",
+      "description": "Solve linear/quadratic equations. Format: '2x + 3 = 7' or 'x^2 - 5x + 6 = 0'.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "equation": {
+            "type": "string"
+          },
+          "variable": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "equation"
+        ]
+      }
+    },
+    {
+      "name": "statistics_summary",
+      "description": "Calculate comprehensive statistics. numbers: comma-separated values.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "numbers": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "numbers"
+        ]
+      }
+    },
+    {
+      "name": "matrix_operations",
+      "description": "Matrix operations. Matrices as JSON 2D arrays. Operations: multiply, add, subtract, transpose, determinant.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "matrix_a": {
+            "type": "string"
+          },
+          "matrix_b": {
+            "type": "string"
+          },
+          "operation": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "matrix_a"
+        ]
+      }
+    },
+    {
+      "name": "probability_calculator",
+      "description": "Calculate probabilities. Types: binomial, combination, permutation, expected_value, bayes.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "event_type": {
+            "type": "string"
+          },
+          "n": {
+            "type": "integer"
+          },
+          "k": {
+            "type": "integer"
+          },
+          "p": {
+            "type": "number"
+          },
+          "trials": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "event_type"
+        ]
+      }
+    }
+  ]
 }
