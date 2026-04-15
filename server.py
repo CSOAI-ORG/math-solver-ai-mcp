@@ -10,6 +10,18 @@ import time
 from typing import Any
 from mcp.server.fastmcp import FastMCP
 
+from datetime import datetime, timezone
+from collections import defaultdict
+
+FREE_DAILY_LIMIT = 15
+_usage = defaultdict(list)
+def _rl(c="anon"):
+    now = datetime.now(timezone.utc)
+    _usage[c] = [t for t in _usage[c] if (now-t).total_seconds() < 86400]
+    if len(_usage[c]) >= FREE_DAILY_LIMIT: return json.dumps({"error": f"Limit {FREE_DAILY_LIMIT}/day"})
+    _usage[c].append(now); return None
+
+
 mcp = FastMCP("math-solver-ai", instructions="MEOK AI Labs MCP Server")
 _calls: dict[str, list[float]] = {}
 DAILY_LIMIT = 50
@@ -29,6 +41,7 @@ def solve_equation(equation: str, variable: str = "x", api_key: str = "") -> dic
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+    if err := _rl(): return err
 
     if not _rate_check("solve_equation"):
         return {"error": "Rate limit exceeded (50/day)"}
@@ -97,6 +110,7 @@ def statistics_summary(numbers: str, api_key: str = "") -> dict[str, Any]:
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+    if err := _rl(): return err
 
     if not _rate_check("statistics_summary"):
         return {"error": "Rate limit exceeded (50/day)"}
@@ -139,6 +153,7 @@ def matrix_operations(matrix_a: str, matrix_b: str = "", operation: str = "multi
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+    if err := _rl(): return err
 
     if not _rate_check("matrix_operations"):
         return {"error": "Rate limit exceeded (50/day)"}
@@ -191,6 +206,7 @@ def probability_calculator(event_type: str, n: int = 0, k: int = 0, p: float = 0
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+    if err := _rl(): return err
 
     if not _rate_check("probability_calculator"):
         return {"error": "Rate limit exceeded (50/day)"}
