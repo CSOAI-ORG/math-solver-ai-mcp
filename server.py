@@ -10,7 +10,7 @@ import time
 from typing import Any
 from mcp.server.fastmcp import FastMCP
 
-mcp = FastMCP("math-solver-ai-mcp")
+mcp = FastMCP("math-solver-ai", instructions="MEOK AI Labs MCP Server")
 _calls: dict[str, list[float]] = {}
 DAILY_LIMIT = 50
 

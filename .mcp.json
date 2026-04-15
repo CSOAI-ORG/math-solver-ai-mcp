@@ -1,6 +1,6 @@
 {
   "name": "math-solver-ai-mcp",
-  "description": "MCP server for math and statistics tools.",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for everyone.",
   "version": "1.0.0",
   "tools": [
     {
