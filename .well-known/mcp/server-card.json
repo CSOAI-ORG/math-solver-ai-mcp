@@ -1,0 +1,53 @@
+{
+  "name": "math-solver-ai",
+  "description": "Math Solver Ai tools powered by MEOK AI Labs.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/math-solver-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "solve_equation",
+      "description": "Solve linear/quadratic equations. Format: '2x + 3 = 7' or 'x^2 - 5x + 6 = 0'."
+    },
+    {
+      "name": "statistics_summary",
+      "description": "Calculate comprehensive statistics. numbers: comma-separated values."
+    },
+    {
+      "name": "matrix_operations",
+      "description": "Matrix operations. Matrices as JSON 2D arrays. Operations: multiply, add, subtract, transpose, determinant."
+    },
+    {
+      "name": "probability_calculator",
+      "description": "Calculate probabilities. Types: binomial, combination, permutation, expected_value, bayes."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Science & Engineering"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
