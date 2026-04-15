@@ -22,3 +22,6 @@ Repository = "https://github.com/CSOAI-ORG/math-solver-ai-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
 only-include = ["server.py"]
+
+[project.scripts]
+math_solver_ai_mcp = "server:main"
