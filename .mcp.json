@@ -1,6 +1,6 @@
 {
   "name": "math-solver-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 MEOK AI Labs MCP Server",
+  "description": "Math Solver Ai automation via MCP. Includes solve equation, statistics summary, matrix operations. By MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {
