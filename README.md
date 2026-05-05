@@ -1,56 +1,38 @@
-# Math Solver AI
+<div align="center">
 
-> By [MEOK AI Labs](https://meok.ai) — Equation solving, statistics, matrix operations, and probability
+[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/math-solver-ai-mcp)](https://github.com/CSOAI-ORG/math-solver-ai-mcp/stargazers)
+
+# umathU solverU aiU mcp
+
+****
+
+[![npm version](https://img.shields.io/npm/v/@meok-ai/math-solver-ai-mcp)](https://www.npmjs.com/package/@meok-ai/math-solver-ai-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
+
+[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/math-solver-ai-mcp/issues)
+
+</div>
+
+---
 
 ## Installation
 
 ```bash
 pip install math-solver-ai-mcp
+# or
+npm install -g @meok-ai/math-solver-ai-mcp
 ```
 
-## Usage
+## Quick Start
 
-```bash
-python server.py
-```
+See the project repository for full documentation and examples.
 
-## Tools
+## Enterprise Support
 
-### `solve_equation`
-Solve linear/quadratic equations. Format: '2x + 3 = 7' or 'x^2 - 5x + 6 = 0'.
-
-**Parameters:**
-- `equation` (str): Equation string with '='
-- `variable` (str): Variable to solve for (default: "x")
-
-### `statistics_summary`
-Calculate comprehensive statistics (mean, median, mode, std deviation, quartiles, IQR).
-
-**Parameters:**
-- `numbers` (str): Comma-separated numerical values
-
-### `matrix_operations`
-Matrix operations. Matrices as JSON 2D arrays. Operations: multiply, add, subtract, transpose, determinant.
-
-**Parameters:**
-- `matrix_a` (str): First matrix as JSON 2D array
-- `matrix_b` (str): Second matrix as JSON 2D array (optional for transpose/determinant)
-- `operation` (str): Operation to perform
-
-### `probability_calculator`
-Calculate probabilities. Types: binomial, combination, permutation, expected_value.
-
-**Parameters:**
-- `event_type` (str): Probability type
-- `n` (int): Total items
-- `k` (int): Selected items
-- `p` (float): Probability of success
-- `trials` (int): Number of trials
-
-## Authentication
-
-Free tier: 15 calls/day. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.
+- 📧 nicholas@csoai.org
+- 🌐 [CSOAI.org](https://csoai.org)
 
 ## License
 
-MIT — MEOK AI Labs
+MIT © [CSOAI](https://csoai.org)
