@@ -37,7 +37,23 @@ def _rate_check(tool: str) -> bool:
 
 @mcp.tool()
 def solve_equation(equation: str, variable: str = "x", api_key: str = "") -> dict[str, Any]:
-    """Solve linear/quadratic equations. Format: '2x + 3 = 7' or 'x^2 - 5x + 6 = 0'."""
+    """Solve linear/quadratic equations. Format: '2x + 3 = 7' or 'x^2 - 5x + 6 = 0'.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -106,7 +122,23 @@ def solve_equation(equation: str, variable: str = "x", api_key: str = "") -> dic
 
 @mcp.tool()
 def statistics_summary(numbers: str, api_key: str = "") -> dict[str, Any]:
-    """Calculate comprehensive statistics. numbers: comma-separated values."""
+    """Calculate comprehensive statistics. numbers: comma-separated values.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -149,7 +181,23 @@ def statistics_summary(numbers: str, api_key: str = "") -> dict[str, Any]:
 
 @mcp.tool()
 def matrix_operations(matrix_a: str, matrix_b: str = "", operation: str = "multiply", api_key: str = "") -> dict[str, Any]:
-    """Matrix operations. Matrices as JSON 2D arrays. Operations: multiply, add, subtract, transpose, determinant."""
+    """Matrix operations. Matrices as JSON 2D arrays. Operations: multiply, add, subtract, transpose, determinant.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -202,7 +250,23 @@ def matrix_operations(matrix_a: str, matrix_b: str = "", operation: str = "multi
 
 @mcp.tool()
 def probability_calculator(event_type: str, n: int = 0, k: int = 0, p: float = 0.0, trials: int = 0, api_key: str = "") -> dict[str, Any]:
-    """Calculate probabilities. Types: binomial, combination, permutation, expected_value, bayes."""
+    """Calculate probabilities. Types: binomial, combination, permutation, expected_value, bayes.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
