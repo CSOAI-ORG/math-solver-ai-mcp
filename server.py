@@ -53,6 +53,12 @@ def solve_equation(equation: str, variable: str = "x", api_key: str = "") -> dic
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        equation (str): The equation to analyze or process.
+        variable (str): The variable to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -152,6 +158,11 @@ def statistics_summary(numbers: str, api_key: str = "") -> dict[str, Any]:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        numbers (str): The numbers to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -225,6 +236,13 @@ def matrix_operations(matrix_a: str, matrix_b: str = "", operation: str = "multi
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        matrix_a (str): The matrix a to analyze or process.
+        matrix_b (str): The matrix b to analyze or process.
+        operation (str): The operation to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -308,6 +326,15 @@ def probability_calculator(event_type: str, n: int = 0, k: int = 0, p: float = 0
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        event_type (str): The event type to analyze or process.
+        n (int): The n to analyze or process.
+        k (int): The k to analyze or process.
+        p (float): The p to analyze or process.
+        trials (int): The trials to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
