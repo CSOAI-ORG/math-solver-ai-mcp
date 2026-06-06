@@ -1,7 +1,7 @@
-"""Math Solver AI MCP Server — Math and statistics tools."""
+"""
+Math Solver AI MCP Server — Math and statistics tools."""
 
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import math
@@ -76,7 +76,7 @@ def solve_equation(equation: str, variable: str = "x", api_key: str = "") -> dic
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
 
     if not _rate_check("solve_equation"):
@@ -180,7 +180,7 @@ def statistics_summary(numbers: str, api_key: str = "") -> dict[str, Any]:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
 
     if not _rate_check("statistics_summary"):
@@ -260,7 +260,7 @@ def matrix_operations(matrix_a: str, matrix_b: str = "", operation: str = "multi
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
 
     if not _rate_check("matrix_operations"):
@@ -352,7 +352,7 @@ def probability_calculator(event_type: str, n: int = 0, k: int = 0, p: float = 0
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
 
     if not _rate_check("probability_calculator"):
@@ -382,5 +382,8 @@ def probability_calculator(event_type: str, n: int = 0, k: int = 0, p: float = 0
                 "expected_value": round(trials * p, 4), "variance": round(trials * p * (1 - p), 4)}
     return {"error": f"Unknown type: {event_type}. Use: binomial, combination, permutation, expected_value"}
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()

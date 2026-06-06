@@ -1,0 +1,25 @@
+{
+  "name": "math-solver-ai-mcp",
+  "title": "Math Solver Ai Mcp",
+  "description": "Math Solver Ai automation via MCP. Includes solve equation, statistics summary, matrix operations. By MEOK AI Labs.",
+  "version": "1.0.6",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "solve_equation"
+    },
+    {
+      "name": "statistics_summary"
+    },
+    {
+      "name": "matrix_operations"
+    },
+    {
+      "name": "probability_calculator"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+# math-solver-ai-mcp - Auto-trigger Rules
+
+When the user asks about math solver, use math-solver-ai-mcp tools: solve_equation, statistics_summary, matrix_operations, probability_calculator
+
+**Math Solver AI MCP Server — Math and statistics tools.**
+
+Install: `pip install math-solver-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.
