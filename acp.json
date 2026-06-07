@@ -1,0 +1,22 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "math-solver-ai-mcp",
+    "description": "Math Solver Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.6",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "math-solver-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "solve_equation",
+      "statistics_summary",
+      "matrix_operations",
+      "probability_calculator"
+    ]
+  }
+}

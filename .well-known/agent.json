@@ -1,0 +1,59 @@
+{
+  "name": "math-solver-ai-mcp",
+  "description": "Math Solver Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/math-solver-ai-mcp.html",
+  "version": "1.0.6",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "solve_equation",
+      "name": "Solve Equation",
+      "description": "solve_equation via math-solver-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "statistics_summary",
+      "name": "Statistics Summary",
+      "description": "statistics_summary via math-solver-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "matrix_operations",
+      "name": "Matrix Operations",
+      "description": "matrix_operations via math-solver-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "probability_calculator",
+      "name": "Probability Calculator",
+      "description": "probability_calculator via math-solver-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
