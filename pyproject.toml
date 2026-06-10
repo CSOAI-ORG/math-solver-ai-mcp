@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "math-solver-ai-mcp"
-version = "1.0.6"
+version = "1.0.7"
 readme = "README.md"
 description = "Math Solver Ai automation via MCP. Includes solve equation, statistics summary, matrix operations. By MEOK AI Labs."
 license = {file = "LICENSE"}
